@@ -38,7 +38,7 @@ while (true) {
 
 let arr = [1, 2, 3, 4, 5];
 console.log(typeof arr);
-arr.forEach(function(val, index) {
+arr.forEach((val, index) => {
   console.log(val);
 
   console.log(arr[index]);
