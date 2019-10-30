@@ -38,11 +38,8 @@ while (true) {
 
 let arr = [1, 2, 3, 4, 5];
 console.log(typeof arr);
-arr.forEach(function(val, index, _arr) {
+arr.forEach(function(val, index) {
   console.log(val);
-  console.log(index);
-  console.log(_arr);
 
-  _arr.push(6);
+  console.log(arr[index]);
 });
-console.log(arr);
