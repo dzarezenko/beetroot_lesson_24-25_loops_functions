@@ -19,7 +19,7 @@ do {
 } while (false);
 console.log(i);*/
 
-let i = 0;
+/*et i = 0;
 while (true) {
 
   if (i == 5) {
@@ -34,4 +34,15 @@ while (true) {
   console.log(i);
 
   i++;
-}
+}*/
+
+let arr = [1, 2, 3, 4, 5];
+console.log(typeof arr);
+arr.forEach(function(val, index, _arr) {
+  console.log(val);
+  console.log(index);
+  console.log(_arr);
+
+  _arr.push(6);
+});
+console.log(arr);
