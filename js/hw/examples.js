@@ -21,10 +21,9 @@ alert(comperison(a, b));
 
 
 let combining = (x1, x2, x3) => {
-    let str = x1 + x2 + x3;
-    return parseInt(str);
-
+    return parseInt(`${x1}${x2}${x3}`);
 }
+
 let x1 = prompt("x1 = ");
 let x2 = prompt("x2 = ");
 let x3 = prompt("x3 = ");
@@ -35,8 +34,8 @@ alert(combining(x1, x2, x3));
 // Если в функцию передали 1 параметр, то она вычисляет площадь квадрата.
 
 let sqr = (s1, s2) => {
-    if (isNaN(s1) || isNaN(s2)) {
-        return s1 * s1
+    if (isNaN(s2)) {
+        return s1 * s1;
     } else {
         return s1 * s2;
     }
@@ -52,7 +51,6 @@ alert(sqr(s1, s2));
 
 let perfect = (num) => {
     let divisors = [];
-    let divisor = 0;
     for (i = num - 1; i >= 1; i--) {
         let divisor = i;
         if (num % divisor == 0) {
@@ -64,17 +62,16 @@ let perfect = (num) => {
         sum += number;
     }
 
-    if (sum == num) {
-        // return (" It is perfect number");
-        return true
-    }
-    // return (" It is't perfect number");
-    return false
+    return (sum == num);
 }
 
 // let num = parseInt(prompt("введите число"));
 
-console.log(perfect(num));
+if (perfect(num)) {
+  console.log(`${num} is perfect`);
+} else {
+  console.log(`${num} isn't perfect`);
+}
 
 //6. Написать функцию, которая принимает минимальное и максимальное значения для диапазона,
 // и выводит только те числа из диапазона, которые являются совершенными.
@@ -104,7 +101,7 @@ let m = +prompt("введите число минуты");
 let s = +prompt("введите число секунды");
 let showTime = (h, m, s) => {
     if (h > 24 || m > 60 || s > 60) alert("введите правильные данные");
-    if (h < 10) h = `0${h}`;
+    if (h < 10) h = `${h}`.padStart(2, "0");
     if (m < 10) m = `0${m}`;
     if (s < 10) s = `0${s}`;
     if (s == undefined) s = `00`;
@@ -150,7 +147,7 @@ alert(calcTime(sec));
 let timeDiference = (h1, m1, s1, h2, m2, s2) => {
     let seconds10_1 = showSeconds(h1, m1, s1);
     let seconds10_2 = showSeconds(h2, m2, s2);
-    let secDiffer = seconds10_2 - seconds10_1;
+    let secDiffer = Math.abs(seconds10_2 - seconds10_1);
     return calcTime(secDiffer);
 }
 
